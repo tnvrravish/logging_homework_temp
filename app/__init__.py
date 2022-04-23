@@ -24,6 +24,8 @@ from app.simple_pages import simple_pages
 import logging
 from flask.logging import default_handler
 
+from app.songs import songs
+
 login_manager = flask_login.LoginManager()
 
 
@@ -42,6 +44,7 @@ def create_app():
     app.register_blueprint(simple_pages)
     app.register_blueprint(auth)
     app.register_blueprint(log_con)
+    app.register_blueprint(songs)
     app.register_blueprint(user_operations)
     app.context_processor(utility_text_processors)
     app.config['BOOTSTRAP_BOOTSWATCH_THEME'] = 'Simplex'

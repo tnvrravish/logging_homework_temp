@@ -2,7 +2,7 @@
 # pylint: disable=redefined-outer-name
 
 import pytest
-from app import create_app, create_log_folder
+from app import create_app, create_log_folder, create_database
 
 
 @pytest.fixture()
@@ -30,3 +30,7 @@ def runner(application):
 @pytest.fixture()
 def make_log_folder(runner):
     runner.invoke(create_log_folder)
+
+@pytest.fixture()
+def make_database_folder(runner):
+    runner.invoke(create_database)
